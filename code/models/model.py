@@ -14,8 +14,6 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, FunctionTransformer
 
 
-
-
 class CM():
     def __init__(self, df):
         self.df = df
@@ -30,14 +28,6 @@ class CM():
             return np.c_[X, acc_on_power, acc_on_cyl]
         return np.c_[X, acc_on_cyl]
         
-        # Ensure the result array always has exactly 11 features
-        if result.shape[1] < 11:
-            zeros_to_add = np.zeros((result.shape[0], 11 - result.shape[1]))
-            result = np.hstack((result, zeros_to_add))
-        elif result.shape[1] > 11:
-            result = result[:, :-1]  # Remove extra feature
-        
-        return result[:, :11]  # Ensure only 11 features are returned
 ##preprocess the Origin column in data
     def preprocess_origin_cols(self,df):
         df["Origin"] = df["Origin"].map({1: "India", 2: "USA", 3: "Germany"})
@@ -92,7 +82,6 @@ class CM():
         return y_pred
     
     
-    
 ############## Test
 # gg={
 #     "Cylinders": [4, 6, 8],
@@ -103,16 +92,27 @@ class CM():
 #     "Model Year": [81, 80, 78],
 #     "Origin": [3, 2, 1]
 # }
+# gg={
+#     "Cylinders": [4],
+#     "Displacement": [155.0],
+#     "Horsepower": [93.0],
+#     "Weight": [2500.0],
+#     "Acceleration": [15.0],
+#     "Model Year": [81],
+#     "Origin": [3]
+# }
+gg={'Cylinders': [3, 5, 6], 'Displacement': [1, 2, 8], 'Horsepower': [3, 5, 1], 'Weight': [6, 8, 5], 'Acceleration': [1, 5, 9], 'Model Year': [70, 60, 40], 'Origin': [1, 1, 1]}
 
-# mm=pd.DataFrame(gg)
-# import pickle
-# with open('C:\Abdelouaheb\perso\Ph\machine_learning_pipeline\code\models\model.bin', 'rb') as f_in:
-#     model = pickle.load(f_in)
-# print(mm)
-# ff=CM(mm)
+mm=pd.DataFrame(gg)
+import pickle
+with open('C:\Abdelouaheb\perso\Ph\machine_learning_pipeline\code\models\model.bin', 'rb') as f_in:
+    model = pickle.load(f_in)
 
-# data = ff.predict_mpg(mm,model)
+ff=CM(mm)
 
+#data = ff.custom_attr_adder(mm.values,acc_on_power=True, acc_ix=4, cyl_ix=0, hpower_ix=2)
+data = ff.predict_mpg(mm,model)
 
-# print(data)
+print(data)
+
 
