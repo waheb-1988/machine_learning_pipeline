@@ -37,11 +37,9 @@ class CM():
         numerics = ['float64', 'int64']
 
         num_attrs = data.select_dtypes(include=numerics)
-
+# ('attrs_adder', FunctionTransformer(self.custom_attr_adder,validate=False,kw_args={'acc_on_power': True, 'acc_ix': 4, 'cyl_ix': 0, 'hpower_ix': 2})),
         num_pipeline = Pipeline([
-            ('imputer', SimpleImputer(strategy="median")),
-            ('attrs_adder', FunctionTransformer(self.custom_attr_adder,validate=False,kw_args={'acc_on_power': True, 'acc_ix': 4, 'cyl_ix': 0, 'hpower_ix': 2})),
-                                            
+            ('imputer', SimpleImputer(strategy="median")),                                
             ('std_scaler', StandardScaler()),
         ])
         
@@ -92,20 +90,20 @@ class CM():
 #     "Model Year": [81, 80, 78],
 #     "Origin": [3, 2, 1]
 # }
-# gg={
-#     "Cylinders": [4],
-#     "Displacement": [155.0],
-#     "Horsepower": [93.0],
-#     "Weight": [2500.0],
-#     "Acceleration": [15.0],
-#     "Model Year": [81],
-#     "Origin": [3]
-# }
-gg={'Cylinders': [3, 5, 6], 'Displacement': [1, 2, 8], 'Horsepower': [3, 5, 1], 'Weight': [6, 8, 5], 'Acceleration': [1, 5, 9], 'Model Year': [70, 60, 40], 'Origin': [1, 1, 1]}
+gg={
+    "Cylinders": [4],
+    "Displacement": [155.0],
+    "Horsepower": [93.0],
+    "Weight": [2500.0],
+    "Acceleration": [15.0],
+    "Model Year": [81],
+    "Origin": [3]
+}
+#gg={'Cylinders': [3, 5, 6], 'Displacement': [1, 2, 8], 'Horsepower': [3, 5, 1], 'Weight': [6, 8, 5], 'Acceleration': [1, 5, 9], 'Model Year': [70, 60, 40], 'Origin': [1, 1, 1]}
 
 mm=pd.DataFrame(gg)
 import pickle
-with open('C:\Abdelouaheb\perso\Ph\machine_learning_pipeline\code\models\model.bin', 'rb') as f_in:
+with open('C:\Abdelouaheb\perso\Ph\machine_learning_pipeline\code\models\model_1.bin', 'rb') as f_in:
     model = pickle.load(f_in)
 
 ff=CM(mm)
