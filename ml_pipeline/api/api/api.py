@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
+
 import joblib
 from custom_tr import OutlierReplaceWithMedian  # Include or import your custom class
 
@@ -18,6 +19,8 @@ app = Flask(__name__)
 def predict():
     # Get data from the request (expects JSON)
     data = request.json
+    print("heheheh")
+    print(data)
     try:
         # Extract features from the request
         features = np.array(data['features']).reshape(1, -1)  # Reshape for a single prediction
