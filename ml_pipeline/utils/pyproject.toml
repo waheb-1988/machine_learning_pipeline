@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ml-pipeline"
+name = "utils"
 version = "0.1.0"
 description = ""
 authors = ["waheb <hocineabdelouaheb@yahoo.fr>"]
@@ -7,12 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-utils = "^1.0.2"
-data = "^0.4"
+matplotlib = "^3.9.2"
+seaborn = "^0.13.2"
 
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.3"
 
 [build-system]
 requires = ["poetry-core"]
