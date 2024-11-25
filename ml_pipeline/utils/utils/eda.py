@@ -5,18 +5,20 @@ import matplotlib.pyplot as plt
 import seaborn as sns 
 import pathlib 
 import os
-
+import random
 
 class Eda :
-    def __init__(self,target):
+    def __init__(self,target,technique_inpute_numeric,technique_inpute_categorial):
         self.target = target
-        pass
+        self.technique_inpute_numeric = technique_inpute_numeric 
+        self.technique_inpute_categorial = technique_inpute_categorial
+        
       
     @staticmethod    
     def read_file():
         dir_folder= pathlib.Path.cwd().parent.parent
         input_path = dir_folder/ "data" / "data" 
-        file_name = "diabetes.csv"
+        file_name = "diabetes_missing_values.csv"
         df= pd.read_csv(os.path.join(input_path,file_name))
         return df
     
@@ -128,21 +130,140 @@ class Eda :
             print(f"Combined plots for {col} saved in: {combined_plot_path}")
 
     # def analysis of categorial
-    def multyvarie_analysis(self,df,target):
-        sns.pairplot(df,hue=target,size=3)
-        plt.show()
+    def multyvarie_analysis(self, df,base_folder="multivariate_analysis"):
+        """
+        Performs pairwise plots for multivariate analysis with respect to the target variable.
         
-    # Def input missing value
-    # def outliers
-    # def analysis of PCA
+        Parameters:
+            df (pd.DataFrame): The DataFrame to analyze.
+            target (str): The target variable for the hue in the pairplot.
+            base_folder (str): Directory to save the pairplot images.
+        """
+        # Ensure the base folder exists
+        if not os.path.exists(base_folder):
+            os.makedirs(base_folder)
+        
+        # Generate the pairplot
+        pairplot_path = os.path.join(base_folder, f"pairplot_{self.target}.png")
+        sns.pairplot(df, hue=self.target, diag_kind='kde', height=3)
+        plt.savefig(pairplot_path, bbox_inches='tight')
+        plt.close()
+        
+        print(f"Pairplot saved in: {pairplot_path}")
+    
+    
+
+    def input_missing_values(self, df, base_folder="missing_values_analysis"):
+        """
+        Summarizes missing values in the DataFrame, provides imputation options for missing data,
+        and generates a heatmap of missing values. The heatmap is saved in the specified directory.
+
+        Parameters:
+            df (pd.DataFrame): The DataFrame to analyze and impute.
+            base_folder (str): Directory to save the heatmap image.
+
+        Returns:
+            pd.DataFrame: A summary of missing values with variable name, number of missing values,
+                        percentage of missing, and variable type.
+            pd.DataFrame: The DataFrame with imputed missing values.
+        """
+        
+        # 1. Summarize missing values
+        missing_summary = pd.DataFrame({
+            'Variable Name': df.columns,
+            'Missing Count': df.isnull().sum().values,
+            'Missing Percentage': (df.isnull().mean().values * 100),
+            'Variable Type': df.dtypes.values
+        })
+        df_missing_summary = missing_summary.copy()
+        missing_summary = missing_summary[missing_summary['Missing Count'] > 0]
+        
+        print("Missing Values Summary:")
+        print(df_missing_summary)
+
+        # 2. Ensure the base folder exists for saving the heatmap
+        if not os.path.exists(base_folder):
+            os.makedirs(base_folder)
+        
+        # 3. Generate heatmap of missing values
+        plt.figure(figsize=(10, 6))
+        sns.heatmap(df.isnull(), cbar=False, cmap='viridis', yticklabels=False, xticklabels=df.columns)
+        plt.title("Missing Values Heatmap", fontsize=16)
+        
+        # Save the heatmap in the specified folder with a default name
+        heatmap_path = os.path.join(base_folder, "missing_values_heatmap.png")
+        plt.savefig(heatmap_path, bbox_inches='tight')
+        plt.close()
+        print(f"Missing values heatmap saved to: {heatmap_path}")
+        
+        # 4. Impute missing values for each column
+        for col in df.columns:
+            if df[col].isnull().sum() > 0:
+                if df[col].dtype in ['float64', 'int64']:  # Numeric columns
+                    print(f"\nHandling missing values for numeric column: {col}")
+                    # Choose imputation technique for numeric data
+                    technique = self.technique_inpute_numeric
+                    
+                    if technique == 'mean':
+                        df[col].fillna(df[col].mean(), inplace=True)
+                    elif technique == 'median':
+                        df[col].fillna(df[col].median(), inplace=True)
+                    elif technique == 'min':
+                        df[col].fillna(df[col].min(), inplace=True)
+                    elif technique == 'max':
+                        df[col].fillna(df[col].max(), inplace=True)
+                    elif technique == 'mode':
+                        df[col].fillna(df[col].mode()[0], inplace=True)
+                    else:
+                        print(f"Invalid or unsupported technique for {col}. Skipping imputation.")
+                
+                elif df[col].dtype == 'object':  # Categorical columns
+                    print(f"\nHandling missing values for categorical column: {col}")
+                    # Choose imputation technique for categorical data
+                    technique_cat = self.technique_inpute_categorial.lower()
+                    if technique_cat == 'mode':
+                        df[col].fillna(df[col].mode()[0], inplace=True)
+                    elif technique_cat == 'most_frequent':
+                        most_frequent = df[col].value_counts().idxmax()
+                        df[col].fillna(most_frequent, inplace=True)
+                    elif technique_cat == 'constant_value':
+                        constant_value = input(f"Enter constant value to impute for {col}: ")
+                        df[col].fillna(constant_value, inplace=True)
+                    elif technique_cat == 'random_value':
+                        unique_values = df[col].dropna().unique()
+                        random_value = random.choice(unique_values)
+                        df[col].fillna(random_value, inplace=True)
+                    else:
+                        print(f"Invalid or unsupported technique for {col}. Skipping imputation.")
+            
+        
+        return df_missing_summary, df
+
+
+# Short 
+# Outliers / standrization / onehot encoding / pipeline / split / model 1 / metrics /save /hyper / evaluation /API /Fast API/ Docker
+
+
+# Long           
+# Def analytics for each variable -skweens / curtosis / numeric variables       
+# Def input missing value column by column / each column with technic
+# Corrleations analysis.
+# ACP analysis / AFC /AFCM .....
+# def outliers
+# Api
+# Docker
+
+   
         
     
 
-use = Eda('Outcome' )
+use = Eda('Outcome',"mean","mode" )
 df = use.read_file()
-use.data_diagnostic(df)
-use.univariate_analysis(df)
+#use.data_diagnostic(df)
+#use.univariate_analysis(df)
+#use.multyvarie_analysis(df)
+use.input_missing_values(df)
 #use.target_variable_balance_check(df,'Outcome' )
-#use.multyvarie_analysis(df,'Outcome' )
+#use.multyvarie_analysis(df,'Outcome')
 # sns.catplot(x='Outcome'  , kind= 'count', data= df)
 # plt.show()
