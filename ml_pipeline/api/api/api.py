@@ -5,35 +5,50 @@ import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
 import joblib
-from custom_tr import OutlierReplaceWithMedian  # Include or import your custom class
+from scaling_outliers import  OutlierReplaceWithMedian, ApplyScaling, CustomEncoder
 
-model = joblib.load("logitic1.pkl")
+model = joblib.load("random_new.pkl")
 
 # Load the trained model
 #model = pickle.load(open("logitic1.pkl", "rb"))
 
-# Initialize Flask app
 app = Flask(__name__)
+
+# Define the feature names (same as during training)
+feature_names = [
+    "Pregnancies","Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", 
+    "DiabetesPedigreeFunction", "Age"
+]
 
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get data from the request (expects JSON)
     data = request.json
-    print("heheheh")
-    print(data)
+    
     try:
-        # Extract features from the request
-        features = np.array(data['features']).reshape(1, -1)  # Reshape for a single prediction
+        # Convert the input data into a pandas DataFrame
+        input_df = pd.DataFrame(data)
         
-        # Make prediction
-        prediction = model.predict(features)
-        prediction_proba = model.predict_proba(features)
+        # Ensure the columns match the expected feature names
+        input_df = input_df[feature_names]
         
-        # Return the prediction as JSON
-        return jsonify({
-            "prediction": int(prediction[0]),
-            "probabilities": prediction_proba.tolist()[0]  # Convert to list for JSON serialization
-        })
+        # Convert features to numpy array and scale if necessary
+        #features = scaler.transform(input_df.values)  # Assuming scaling is applied
+        
+        # Make predictions for each set of features
+        predictions = model.predict(input_df)
+        prediction_proba = model.predict_proba(input_df)
+
+        # Return the predictions as JSON
+        result = []
+        for i in range(len(predictions)):
+            result.append({
+                "prediction": int(predictions[i]),
+                "probabilities": prediction_proba[i].tolist()  # Convert to list for JSON serialization
+            })
+        
+        return jsonify(result)
+    
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
