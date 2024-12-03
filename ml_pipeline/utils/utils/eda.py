@@ -437,7 +437,7 @@ class OutlierReplaceWithMedian(BaseEstimator, TransformerMixin):
         
         return data.values  # Return as a NumPy array for compatibility with scikit-learn
 # Short 
-# Outliers / standrization / onehot encoding / pipeline / split / model 1 / metrics /save /hyper / evaluation /API /Fast API/ Docker
+# Outliers / standrization / onehot encoding / pipeline / split / model 1 / metrics /save /hyper / evaluation /API /Fast API/ Docker / rabitmq
 
 
 # Long           
