@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0bc658eab334ce36d8669dedeb4192d2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0bc658eab334ce36d8669dedeb4192d2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0bc658eab334ce36d8669dedeb4192d2 = L.map(
+                "map_0bc658eab334ce36d8669dedeb4192d2",
+                {
+                    center: [23.5, 56.75],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c4a0933e522181d2b5b0f57e283d6aa6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c4a0933e522181d2b5b0f57e283d6aa6.addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+            var marker_f0b04b55e07596fd5327d896eaaf2abd = L.marker(
+                [23.344589706696624, 57.33770669994094],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_294edf9b1b2a65b4468413902644b1f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d35d18e606834461d27359fef95dab3d = $(`<div id="html_d35d18e606834461d27359fef95dab3d" style="width: 100.0%; height: 100.0%;">Wells: Wells 1<br>Date: 2024-01-01 00:00:00</div>`)[0];
+                popup_294edf9b1b2a65b4468413902644b1f9.setContent(html_d35d18e606834461d27359fef95dab3d);
+            
+        
+
+        marker_f0b04b55e07596fd5327d896eaaf2abd.bindPopup(popup_294edf9b1b2a65b4468413902644b1f9)
+        ;
+
+        
+    
+    
+            var marker_2a0700652aecb0f65ba792331c54184e = L.marker(
+                [23.630840507029045, 56.32259375396207],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_cca39f81b4faa30dcde41a186d4ab401 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f317e5f3a5fc158e8a369bba1a41e95 = $(`<div id="html_3f317e5f3a5fc158e8a369bba1a41e95" style="width: 100.0%; height: 100.0%;">Wells: Wells 2<br>Date: 2024-01-02 00:00:00</div>`)[0];
+                popup_cca39f81b4faa30dcde41a186d4ab401.setContent(html_3f317e5f3a5fc158e8a369bba1a41e95);
+            
+        
+
+        marker_2a0700652aecb0f65ba792331c54184e.bindPopup(popup_cca39f81b4faa30dcde41a186d4ab401)
+        ;
+
+        
+    
+    
+            var marker_5dd4d38a5c6d9f43fe450e52c699dbf2 = L.marker(
+                [23.767208942766732, 57.163913496695834],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_06a065320076a95c9533bc84d384dffb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2716f0ba096ab738b65106a339ff026 = $(`<div id="html_f2716f0ba096ab738b65106a339ff026" style="width: 100.0%; height: 100.0%;">Wells: Wells 3<br>Date: 2024-01-03 00:00:00</div>`)[0];
+                popup_06a065320076a95c9533bc84d384dffb.setContent(html_f2716f0ba096ab738b65106a339ff026);
+            
+        
+
+        marker_5dd4d38a5c6d9f43fe450e52c699dbf2.bindPopup(popup_06a065320076a95c9533bc84d384dffb)
+        ;
+
+        
+    
+    
+            var marker_e7c5c40a46375f241ff42255dfc2b27d = L.marker(
+                [23.118912474062718, 56.97666248988597],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_e80bdd205397ce89c1fa2626aff507ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c57b1b42c5d8e7d6ef54a18147e0b81e = $(`<div id="html_c57b1b42c5d8e7d6ef54a18147e0b81e" style="width: 100.0%; height: 100.0%;">Wells: Wells 4<br>Date: 2024-01-04 00:00:00</div>`)[0];
+                popup_e80bdd205397ce89c1fa2626aff507ae.setContent(html_c57b1b42c5d8e7d6ef54a18147e0b81e);
+            
+        
+
+        marker_e7c5c40a46375f241ff42255dfc2b27d.bindPopup(popup_e80bdd205397ce89c1fa2626aff507ae)
+        ;
+
+        
+    
+    
+            var marker_866d65ed878232d06d304f262628d7c6 = L.marker(
+                [23.03899001937011, 57.436977886784156],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_aa44ec2da3c4893879f879720e44bad4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2040f0d4f0d93390291aa1af474dc97f = $(`<div id="html_2040f0d4f0d93390291aa1af474dc97f" style="width: 100.0%; height: 100.0%;">Wells: Wells 5<br>Date: 2024-01-05 00:00:00</div>`)[0];
+                popup_aa44ec2da3c4893879f879720e44bad4.setContent(html_2040f0d4f0d93390291aa1af474dc97f);
+            
+        
+
+        marker_866d65ed878232d06d304f262628d7c6.bindPopup(popup_aa44ec2da3c4893879f879720e44bad4)
+        ;
+
+        
+    
+    
+            var marker_ef478c52f3f62c62dee664f8d29ed89f = L.marker(
+                [23.656469030390742, 57.08492212603816],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_3e82f481de3e6d718c3542f3f9e74486 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a657fe2839ccba65dfa33a7684d58a61 = $(`<div id="html_a657fe2839ccba65dfa33a7684d58a61" style="width: 100.0%; height: 100.0%;">Wells: Wells 6<br>Date: 2024-01-06 00:00:00</div>`)[0];
+                popup_3e82f481de3e6d718c3542f3f9e74486.setContent(html_a657fe2839ccba65dfa33a7684d58a61);
+            
+        
+
+        marker_ef478c52f3f62c62dee664f8d29ed89f.bindPopup(popup_3e82f481de3e6d718c3542f3f9e74486)
+        ;
+
+        
+    
+    
+            var marker_89a86b19a142c1bbbc3fd5c0f0216268 = L.marker(
+                [23.12051608954951, 57.20023609324316],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_5152a31d76d02d7a0713e5031fa9456c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76d59557d2d29a5606b103f5cd958502 = $(`<div id="html_76d59557d2d29a5606b103f5cd958502" style="width: 100.0%; height: 100.0%;">Wells: Wells 7<br>Date: 2024-01-07 00:00:00</div>`)[0];
+                popup_5152a31d76d02d7a0713e5031fa9456c.setContent(html_76d59557d2d29a5606b103f5cd958502);
+            
+        
+
+        marker_89a86b19a142c1bbbc3fd5c0f0216268.bindPopup(popup_5152a31d76d02d7a0713e5031fa9456c)
+        ;
+
+        
+    
+    
+            var marker_795645b9608a9f3bf9a7415ea40c4bdf = L.marker(
+                [23.964628037683287, 56.79184406436075],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_b7221d01dff7874cf79374fc0cc3f4c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4011cddf3e7d0ca5e22d2b2d0d028227 = $(`<div id="html_4011cddf3e7d0ca5e22d2b2d0d028227" style="width: 100.0%; height: 100.0%;">Wells: Wells 8<br>Date: 2024-01-08 00:00:00</div>`)[0];
+                popup_b7221d01dff7874cf79374fc0cc3f4c7.setContent(html_4011cddf3e7d0ca5e22d2b2d0d028227);
+            
+        
+
+        marker_795645b9608a9f3bf9a7415ea40c4bdf.bindPopup(popup_b7221d01dff7874cf79374fc0cc3f4c7)
+        ;
+
+        
+    
+    
+            var marker_c33d4d130c19196e9c5458b211e995e0 = L.marker(
+                [23.781438517276193, 57.038496728810216],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_b0dc4ca6d2a2c5d86fc627346e8b4119 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82d4246dc575c904b3f5094ea8cac453 = $(`<div id="html_82d4246dc575c904b3f5094ea8cac453" style="width: 100.0%; height: 100.0%;">Wells: Wells 9<br>Date: 2024-01-09 00:00:00</div>`)[0];
+                popup_b0dc4ca6d2a2c5d86fc627346e8b4119.setContent(html_82d4246dc575c904b3f5094ea8cac453);
+            
+        
+
+        marker_c33d4d130c19196e9c5458b211e995e0.bindPopup(popup_b0dc4ca6d2a2c5d86fc627346e8b4119)
+        ;
+
+        
+    
+    
+            var marker_8d55bf13a304c6f32925efbe6bfb3762 = L.marker(
+                [23.07179977019909, 56.507360014709825],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_eefdfa0cbfd1c02b2ba22a420f168d70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cb478bd67663af25f411f5aba78d8e9 = $(`<div id="html_0cb478bd67663af25f411f5aba78d8e9" style="width: 100.0%; height: 100.0%;">Wells: Wells 10<br>Date: 2024-01-10 00:00:00</div>`)[0];
+                popup_eefdfa0cbfd1c02b2ba22a420f168d70.setContent(html_0cb478bd67663af25f411f5aba78d8e9);
+            
+        
+
+        marker_8d55bf13a304c6f32925efbe6bfb3762.bindPopup(popup_eefdfa0cbfd1c02b2ba22a420f168d70)
+        ;
+
+        
+    
+    
+            var marker_0e97a6b9271062a15a38f511fc33a548 = L.marker(
+                [23.192195668710546, 57.31754152107123],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_1aa1d26ace8b0677f2f753daf38d8ea0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b1b614789709f591265c31ccc8e4be58 = $(`<div id="html_b1b614789709f591265c31ccc8e4be58" style="width: 100.0%; height: 100.0%;">Wells: Wells 11<br>Date: 2024-01-11 00:00:00</div>`)[0];
+                popup_1aa1d26ace8b0677f2f753daf38d8ea0.setContent(html_b1b614789709f591265c31ccc8e4be58);
+            
+        
+
+        marker_0e97a6b9271062a15a38f511fc33a548.bindPopup(popup_1aa1d26ace8b0677f2f753daf38d8ea0)
+        ;
+
+        
+    
+    
+            var marker_5faf2b2b47af3eeb02894d8d6ca8f468 = L.marker(
+                [23.61235383902998, 56.33847819731757],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_fe42f2324e32b8db3dcf3b061a64d9cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0fab821f78cd40f99fab6eb547444014 = $(`<div id="html_0fab821f78cd40f99fab6eb547444014" style="width: 100.0%; height: 100.0%;">Wells: Wells 12<br>Date: 2024-01-12 00:00:00</div>`)[0];
+                popup_fe42f2324e32b8db3dcf3b061a64d9cb.setContent(html_0fab821f78cd40f99fab6eb547444014);
+            
+        
+
+        marker_5faf2b2b47af3eeb02894d8d6ca8f468.bindPopup(popup_fe42f2324e32b8db3dcf3b061a64d9cb)
+        ;
+
+        
+    
+    
+            var marker_37cf3596a3b756789ef62c8777b0f7ad = L.marker(
+                [23.432301122742135, 57.14640410464336],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_33fc72dfa68a6726eb4388667520e53a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc5f879657b70cc163d62b1286603688 = $(`<div id="html_cc5f879657b70cc163d62b1286603688" style="width: 100.0%; height: 100.0%;">Wells: Wells 13<br>Date: 2024-01-13 00:00:00</div>`)[0];
+                popup_33fc72dfa68a6726eb4388667520e53a.setContent(html_cc5f879657b70cc163d62b1286603688);
+            
+        
+
+        marker_37cf3596a3b756789ef62c8777b0f7ad.bindPopup(popup_33fc72dfa68a6726eb4388667520e53a)
+        ;
+
+        
+    
+    
+            var marker_b4ca3878359e0fc9a858ee831bfb2642 = L.marker(
+                [23.255830479333103, 56.08092348680868],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_84c4478dd921f9fa76b0c374085f8d99 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f8f28714cc0003cc53be29acfb16f7c = $(`<div id="html_4f8f28714cc0003cc53be29acfb16f7c" style="width: 100.0%; height: 100.0%;">Wells: Wells 14<br>Date: 2024-01-14 00:00:00</div>`)[0];
+                popup_84c4478dd921f9fa76b0c374085f8d99.setContent(html_4f8f28714cc0003cc53be29acfb16f7c);
+            
+        
+
+        marker_b4ca3878359e0fc9a858ee831bfb2642.bindPopup(popup_84c4478dd921f9fa76b0c374085f8d99)
+        ;
+
+        
+    
+    
+            var marker_2892d7ed301f14265c2a42917460231e = L.marker(
+                [23.613856220519615, 56.01895541620784],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_25e8b194cf3904d560a20bfd1235959d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da5c1d3539fd584967373bfb7ea9983d = $(`<div id="html_da5c1d3539fd584967373bfb7ea9983d" style="width: 100.0%; height: 100.0%;">Wells: Wells 15<br>Date: 2024-01-15 00:00:00</div>`)[0];
+                popup_25e8b194cf3904d560a20bfd1235959d.setContent(html_da5c1d3539fd584967373bfb7ea9983d);
+            
+        
+
+        marker_2892d7ed301f14265c2a42917460231e.bindPopup(popup_25e8b194cf3904d560a20bfd1235959d)
+        ;
+
+        
+    
+    
+            var marker_427e507d1860114107171603ac86c51a = L.marker(
+                [23.643097172974233, 57.43210405432154],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_add42e648d16d0f8531ccc563a359e45 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f80da0d378c1866de5c4e1c2687a0f37 = $(`<div id="html_f80da0d378c1866de5c4e1c2687a0f37" style="width: 100.0%; height: 100.0%;">Wells: Wells 16<br>Date: 2024-01-16 00:00:00</div>`)[0];
+                popup_add42e648d16d0f8531ccc563a359e45.setContent(html_f80da0d378c1866de5c4e1c2687a0f37);
+            
+        
+
+        marker_427e507d1860114107171603ac86c51a.bindPopup(popup_add42e648d16d0f8531ccc563a359e45)
+        ;
+
+        
+    
+    
+            var marker_2783e9f71fb1dd49ec883ef1b3875966 = L.marker(
+                [23.69278549670226, 56.57874349003233],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_af725855ee7dc7c208c1d3f98b042e2d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_71bbf74bc18dc2ffd70d91bccb8e6adb = $(`<div id="html_71bbf74bc18dc2ffd70d91bccb8e6adb" style="width: 100.0%; height: 100.0%;">Wells: Wells 17<br>Date: 2024-01-17 00:00:00</div>`)[0];
+                popup_af725855ee7dc7c208c1d3f98b042e2d.setContent(html_71bbf74bc18dc2ffd70d91bccb8e6adb);
+            
+        
+
+        marker_2783e9f71fb1dd49ec883ef1b3875966.bindPopup(popup_af725855ee7dc7c208c1d3f98b042e2d)
+        ;
+
+        
+    
+    
+            var marker_ddcb002b0a9bd14d45df11882a3f9a20 = L.marker(
+                [23.056550029253323, 56.5278786755589],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_f21be29e4a245b67d9e40d2fd0a77b6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cdbcfd3e62954d6f8c14879ec029ffdf = $(`<div id="html_cdbcfd3e62954d6f8c14879ec029ffdf" style="width: 100.0%; height: 100.0%;">Wells: Wells 18<br>Date: 2024-01-18 00:00:00</div>`)[0];
+                popup_f21be29e4a245b67d9e40d2fd0a77b6d.setContent(html_cdbcfd3e62954d6f8c14879ec029ffdf);
+            
+        
+
+        marker_ddcb002b0a9bd14d45df11882a3f9a20.bindPopup(popup_f21be29e4a245b67d9e40d2fd0a77b6d)
+        ;
+
+        
+    
+    
+            var marker_1c2a89864de9fa80391b941d4e815f70 = L.marker(
+                [23.811184166704525, 56.89568523165169],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_d07c32c768870db0af9ff562a0bd4f51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6beb307711a4a011c78bf0fe3eac70b9 = $(`<div id="html_6beb307711a4a011c78bf0fe3eac70b9" style="width: 100.0%; height: 100.0%;">Wells: Wells 19<br>Date: 2024-01-19 00:00:00</div>`)[0];
+                popup_d07c32c768870db0af9ff562a0bd4f51.setContent(html_6beb307711a4a011c78bf0fe3eac70b9);
+            
+        
+
+        marker_1c2a89864de9fa80391b941d4e815f70.bindPopup(popup_d07c32c768870db0af9ff562a0bd4f51)
+        ;
+
+        
+    
+    
+            var marker_520af8de2903acaf0983f9e2ab0b3f26 = L.marker(
+                [23.890180522719273, 56.61229919208161],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_d6b887c522a5cb958b0f4dbdfc12bbc1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d1183761c8917b7dac3247ccb6ed434 = $(`<div id="html_3d1183761c8917b7dac3247ccb6ed434" style="width: 100.0%; height: 100.0%;">Wells: Wells 20<br>Date: 2024-01-20 00:00:00</div>`)[0];
+                popup_d6b887c522a5cb958b0f4dbdfc12bbc1.setContent(html_3d1183761c8917b7dac3247ccb6ed434);
+            
+        
+
+        marker_520af8de2903acaf0983f9e2ab0b3f26.bindPopup(popup_d6b887c522a5cb958b0f4dbdfc12bbc1)
+        ;
+
+        
+    
+    
+            var marker_cd4960dca7a646579c5b949e7b26b519 = L.marker(
+                [23.39817860895224, 56.10095561315726],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_7607ef9ade3e2022c93daea1c083daac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c6504df8ade3f3f87cd5251f5859e9f = $(`<div id="html_2c6504df8ade3f3f87cd5251f5859e9f" style="width: 100.0%; height: 100.0%;">Wells: Wells 21<br>Date: 2024-01-21 00:00:00</div>`)[0];
+                popup_7607ef9ade3e2022c93daea1c083daac.setContent(html_2c6504df8ade3f3f87cd5251f5859e9f);
+            
+        
+
+        marker_cd4960dca7a646579c5b949e7b26b519.bindPopup(popup_7607ef9ade3e2022c93daea1c083daac)
+        ;
+
+        
+    
+    
+            var marker_8cbe28929a317a80943a65313279aa41 = L.marker(
+                [23.545871460122914, 56.49491312815199],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_7b13ca79ebbd468b4ecbb243d83ac0e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_47f75024e0d9dc9e2ee8363ecabe6d28 = $(`<div id="html_47f75024e0d9dc9e2ee8363ecabe6d28" style="width: 100.0%; height: 100.0%;">Wells: Wells 22<br>Date: 2024-01-22 00:00:00</div>`)[0];
+                popup_7b13ca79ebbd468b4ecbb243d83ac0e5.setContent(html_47f75024e0d9dc9e2ee8363ecabe6d28);
+            
+        
+
+        marker_8cbe28929a317a80943a65313279aa41.bindPopup(popup_7b13ca79ebbd468b4ecbb243d83ac0e5)
+        ;
+
+        
+    
+    
+            var marker_1bdef1f345271e0f3a903fe433c1f817 = L.marker(
+                [23.996696658891718, 57.195249844281044],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_4b8ae2fc0bcf5554aebe2fb853738292 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_462ec4845b85cf7460aecdd748603656 = $(`<div id="html_462ec4845b85cf7460aecdd748603656" style="width: 100.0%; height: 100.0%;">Wells: Wells 23<br>Date: 2024-01-23 00:00:00</div>`)[0];
+                popup_4b8ae2fc0bcf5554aebe2fb853738292.setContent(html_462ec4845b85cf7460aecdd748603656);
+            
+        
+
+        marker_1bdef1f345271e0f3a903fe433c1f817.bindPopup(popup_4b8ae2fc0bcf5554aebe2fb853738292)
+        ;
+
+        
+    
+    
+            var marker_86898aa016146f5b2881189d0c6d9ab4 = L.marker(
+                [23.072937958349254, 56.331265853666686],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_6e575da05c6b71a5009dc600c9430552 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc6f2379848cfd09b15538b5c5caa1c1 = $(`<div id="html_cc6f2379848cfd09b15538b5c5caa1c1" style="width: 100.0%; height: 100.0%;">Wells: Wells 24<br>Date: 2024-01-24 00:00:00</div>`)[0];
+                popup_6e575da05c6b71a5009dc600c9430552.setContent(html_cc6f2379848cfd09b15538b5c5caa1c1);
+            
+        
+
+        marker_86898aa016146f5b2881189d0c6d9ab4.bindPopup(popup_6e575da05c6b71a5009dc600c9430552)
+        ;
+
+        
+    
+    
+            var marker_d3162108b66897bc3b76fd5e919b944f = L.marker(
+                [23.039354178954046, 56.24582760448623],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_68750853b63895640d31e108042e2089 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d5f884d1e12857e566558a9258f8a73 = $(`<div id="html_6d5f884d1e12857e566558a9258f8a73" style="width: 100.0%; height: 100.0%;">Wells: Wells 25<br>Date: 2024-01-25 00:00:00</div>`)[0];
+                popup_68750853b63895640d31e108042e2089.setContent(html_6d5f884d1e12857e566558a9258f8a73);
+            
+        
+
+        marker_d3162108b66897bc3b76fd5e919b944f.bindPopup(popup_68750853b63895640d31e108042e2089)
+        ;
+
+        
+    
+    
+            var marker_2ee7f1728a00f00bbcad5a707175caf2 = L.marker(
+                [23.8591049790993, 56.92783151262562],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_26be3243c1a4a317b75cc2cb8ac6ddf8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f13ee54fef41c1d39a43c9cc130a5c8 = $(`<div id="html_4f13ee54fef41c1d39a43c9cc130a5c8" style="width: 100.0%; height: 100.0%;">Wells: Wells 26<br>Date: 2024-01-26 00:00:00</div>`)[0];
+                popup_26be3243c1a4a317b75cc2cb8ac6ddf8.setContent(html_4f13ee54fef41c1d39a43c9cc130a5c8);
+            
+        
+
+        marker_2ee7f1728a00f00bbcad5a707175caf2.bindPopup(popup_26be3243c1a4a317b75cc2cb8ac6ddf8)
+        ;
+
+        
+    
+    
+            var marker_8cb73cf410d1aecda9a04b6d7ad205f5 = L.marker(
+                [23.403219598385835, 57.47787913797892],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_bb9a1327f9e1a8af027f4cedbc6850c8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ee60c094228383998fbd6611a477c01 = $(`<div id="html_7ee60c094228383998fbd6611a477c01" style="width: 100.0%; height: 100.0%;">Wells: Wells 27<br>Date: 2024-01-27 00:00:00</div>`)[0];
+                popup_bb9a1327f9e1a8af027f4cedbc6850c8.setContent(html_7ee60c094228383998fbd6611a477c01);
+            
+        
+
+        marker_8cb73cf410d1aecda9a04b6d7ad205f5.bindPopup(popup_bb9a1327f9e1a8af027f4cedbc6850c8)
+        ;
+
+        
+    
+    
+            var marker_6f3bef4e25ba75a5758024d6731e3877 = L.marker(
+                [23.622147284316263, 56.69770456939211],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_707b1d9db812b16405a7a38f8dd11c54 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac982e89dd66bc014d97cdc7cea85a72 = $(`<div id="html_ac982e89dd66bc014d97cdc7cea85a72" style="width: 100.0%; height: 100.0%;">Wells: Wells 28<br>Date: 2024-01-28 00:00:00</div>`)[0];
+                popup_707b1d9db812b16405a7a38f8dd11c54.setContent(html_ac982e89dd66bc014d97cdc7cea85a72);
+            
+        
+
+        marker_6f3bef4e25ba75a5758024d6731e3877.bindPopup(popup_707b1d9db812b16405a7a38f8dd11c54)
+        ;
+
+        
+    
+    
+            var marker_5865cfb9721bae0b69cd1b7cf3f89183 = L.marker(
+                [23.584242964815836, 56.06948060529391],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_cfa6e5d2c1b0daad3b581da7432cc663 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_68e1764703157f71edd581c01ec4dd85 = $(`<div id="html_68e1764703157f71edd581c01ec4dd85" style="width: 100.0%; height: 100.0%;">Wells: Wells 29<br>Date: 2024-01-29 00:00:00</div>`)[0];
+                popup_cfa6e5d2c1b0daad3b581da7432cc663.setContent(html_68e1764703157f71edd581c01ec4dd85);
+            
+        
+
+        marker_5865cfb9721bae0b69cd1b7cf3f89183.bindPopup(popup_cfa6e5d2c1b0daad3b581da7432cc663)
+        ;
+
+        
+    
+    
+            var marker_b38bd714922cf1e78381f09bec9f9946 = L.marker(
+                [23.703805970592608, 56.011083540672566],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_80add6593cffb7812378cf891aaea95f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81a5bb99a02ed9c10cd635d814e3435c = $(`<div id="html_81a5bb99a02ed9c10cd635d814e3435c" style="width: 100.0%; height: 100.0%;">Wells: Wells 30<br>Date: 2024-01-30 00:00:00</div>`)[0];
+                popup_80add6593cffb7812378cf891aaea95f.setContent(html_81a5bb99a02ed9c10cd635d814e3435c);
+            
+        
+
+        marker_b38bd714922cf1e78381f09bec9f9946.bindPopup(popup_80add6593cffb7812378cf891aaea95f)
+        ;
+
+        
+    
+    
+            var marker_56e90e333e2c4364ce7dd615c0161b08 = L.marker(
+                [23.590555622260037, 57.497011800748865],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_97d8170c02cac62b80b1d766e16e73f3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_188b260b4a4dff6a81ec8aec0c17b1be = $(`<div id="html_188b260b4a4dff6a81ec8aec0c17b1be" style="width: 100.0%; height: 100.0%;">Wells: Wells 31<br>Date: 2024-01-31 00:00:00</div>`)[0];
+                popup_97d8170c02cac62b80b1d766e16e73f3.setContent(html_188b260b4a4dff6a81ec8aec0c17b1be);
+            
+        
+
+        marker_56e90e333e2c4364ce7dd615c0161b08.bindPopup(popup_97d8170c02cac62b80b1d766e16e73f3)
+        ;
+
+        
+    
+    
+            var marker_249c7d53f5836a39145fb52db6d901e3 = L.marker(
+                [23.432327029900268, 56.947999813316635],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_9278b1b7d261490dab31a317064e2614 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d4f2d6141b840b6be68b8e2ee3c2be6 = $(`<div id="html_8d4f2d6141b840b6be68b8e2ee3c2be6" style="width: 100.0%; height: 100.0%;">Wells: Wells 32<br>Date: 2024-02-01 00:00:00</div>`)[0];
+                popup_9278b1b7d261490dab31a317064e2614.setContent(html_8d4f2d6141b840b6be68b8e2ee3c2be6);
+            
+        
+
+        marker_249c7d53f5836a39145fb52db6d901e3.bindPopup(popup_9278b1b7d261490dab31a317064e2614)
+        ;
+
+        
+    
+    
+            var marker_ef4baa9a5d61ba941ddaa6305360d310 = L.marker(
+                [23.91202352488472, 57.10770984470951],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_75967888d18ee032c52cd1355c87435f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3f3870c2d02ef3667284308dc83e613 = $(`<div id="html_f3f3870c2d02ef3667284308dc83e613" style="width: 100.0%; height: 100.0%;">Wells: Wells 33<br>Date: 2024-02-02 00:00:00</div>`)[0];
+                popup_75967888d18ee032c52cd1355c87435f.setContent(html_f3f3870c2d02ef3667284308dc83e613);
+            
+        
+
+        marker_ef4baa9a5d61ba941ddaa6305360d310.bindPopup(popup_75967888d18ee032c52cd1355c87435f)
+        ;
+
+        
+    
+    
+            var marker_ca90fc26193f0628e77c245d61a797fb = L.marker(
+                [23.44992262765528, 56.99897380624126],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_43e295f3ddede8c28c907ce736efea12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e72b6eb34676592e47e4ffbcae6e6069 = $(`<div id="html_e72b6eb34676592e47e4ffbcae6e6069" style="width: 100.0%; height: 100.0%;">Wells: Wells 34<br>Date: 2024-02-03 00:00:00</div>`)[0];
+                popup_43e295f3ddede8c28c907ce736efea12.setContent(html_e72b6eb34676592e47e4ffbcae6e6069);
+            
+        
+
+        marker_ca90fc26193f0628e77c245d61a797fb.bindPopup(popup_43e295f3ddede8c28c907ce736efea12)
+        ;
+
+        
+    
+    
+            var marker_838757b0221d5998dd7be7452ee79256 = L.marker(
+                [23.31933422803004, 57.12156827033623],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_91351767583656e08961c0848c9ac4da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c77d6ec1fcf4ed88c19636c88ef0b40 = $(`<div id="html_0c77d6ec1fcf4ed88c19636c88ef0b40" style="width: 100.0%; height: 100.0%;">Wells: Wells 35<br>Date: 2024-02-04 00:00:00</div>`)[0];
+                popup_91351767583656e08961c0848c9ac4da.setContent(html_0c77d6ec1fcf4ed88c19636c88ef0b40);
+            
+        
+
+        marker_838757b0221d5998dd7be7452ee79256.bindPopup(popup_91351767583656e08961c0848c9ac4da)
+        ;
+
+        
+    
+    
+            var marker_b37e3c763d88974beb81ab20cb36bfe4 = L.marker(
+                [23.536597901820716, 56.36324243004359],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_01679f75cd8355aa81449c2fc374ad6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b45d48c71f1aea77e69211aacc61ca84 = $(`<div id="html_b45d48c71f1aea77e69211aacc61ca84" style="width: 100.0%; height: 100.0%;">Wells: Wells 36<br>Date: 2024-02-05 00:00:00</div>`)[0];
+                popup_01679f75cd8355aa81449c2fc374ad6b.setContent(html_b45d48c71f1aea77e69211aacc61ca84);
+            
+        
+
+        marker_b37e3c763d88974beb81ab20cb36bfe4.bindPopup(popup_01679f75cd8355aa81449c2fc374ad6b)
+        ;
+
+        
+    
+    
+            var marker_95cf87f56a2c7590c1e9273771130f1e = L.marker(
+                [23.06686650333293, 57.13546362546273],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_7c97d71920fd54e7c12fa5adcd932be9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c0de48d20e729e67278ee14a9302583 = $(`<div id="html_0c0de48d20e729e67278ee14a9302583" style="width: 100.0%; height: 100.0%;">Wells: Wells 37<br>Date: 2024-02-06 00:00:00</div>`)[0];
+                popup_7c97d71920fd54e7c12fa5adcd932be9.setContent(html_0c0de48d20e729e67278ee14a9302583);
+            
+        
+
+        marker_95cf87f56a2c7590c1e9273771130f1e.bindPopup(popup_7c97d71920fd54e7c12fa5adcd932be9)
+        ;
+
+        
+    
+    
+            var marker_d71a09f456e97cced2de19e83f5e4b30 = L.marker(
+                [23.251285283158758, 56.50840242536802],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_d222c6eb872b60e1dcde61953358d36d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25593e7b7d47c22a9fdf4e4f83e5632b = $(`<div id="html_25593e7b7d47c22a9fdf4e4f83e5632b" style="width: 100.0%; height: 100.0%;">Wells: Wells 38<br>Date: 2024-02-07 00:00:00</div>`)[0];
+                popup_d222c6eb872b60e1dcde61953358d36d.setContent(html_25593e7b7d47c22a9fdf4e4f83e5632b);
+            
+        
+
+        marker_d71a09f456e97cced2de19e83f5e4b30.bindPopup(popup_d222c6eb872b60e1dcde61953358d36d)
+        ;
+
+        
+    
+    
+            var marker_bf99048e1cf19dbb6cad6040fc83dc46 = L.marker(
+                [23.108019442965485, 56.240955202642056],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_0580da8c88b1d561677ca39954c3c19b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5662a8dba729099e019538691c3c5b5f = $(`<div id="html_5662a8dba729099e019538691c3c5b5f" style="width: 100.0%; height: 100.0%;">Wells: Wells 39<br>Date: 2024-02-08 00:00:00</div>`)[0];
+                popup_0580da8c88b1d561677ca39954c3c19b.setContent(html_5662a8dba729099e019538691c3c5b5f);
+            
+        
+
+        marker_bf99048e1cf19dbb6cad6040fc83dc46.bindPopup(popup_0580da8c88b1d561677ca39954c3c19b)
+        ;
+
+        
+    
+    
+            var marker_e82f3c991827bde7ef4d7867203159c9 = L.marker(
+                [23.40727416925084, 56.91116383635458],
+                {
+}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+    
+        var popup_3ef4ef26dcdf8e3bd0c8caa79de30684 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_75054db69405c9ad72572c36b73f425b = $(`<div id="html_75054db69405c9ad72572c36b73f425b" style="width: 100.0%; height: 100.0%;">Wells: Wells 40<br>Date: 2024-02-09 00:00:00</div>`)[0];
+                popup_3ef4ef26dcdf8e3bd0c8caa79de30684.setContent(html_75054db69405c9ad72572c36b73f425b);
+            
+        
+
+        marker_e82f3c991827bde7ef4d7867203159c9.bindPopup(popup_3ef4ef26dcdf8e3bd0c8caa79de30684)
+        ;
+
+        
+    
+    
+            var poly_line_246f09421baefd11a3495d768210c6da = L.polyline(
+                [[23.344589706696624, 57.33770669994094], [23.630840507029045, 56.32259375396207], [23.767208942766732, 57.163913496695834], [23.118912474062718, 56.97666248988597], [23.03899001937011, 57.436977886784156], [23.656469030390742, 57.08492212603816], [23.12051608954951, 57.20023609324316], [23.964628037683287, 56.79184406436075], [23.781438517276193, 57.038496728810216], [23.07179977019909, 56.507360014709825], [23.192195668710546, 57.31754152107123], [23.61235383902998, 56.33847819731757], [23.432301122742135, 57.14640410464336], [23.255830479333103, 56.08092348680868], [23.613856220519615, 56.01895541620784], [23.643097172974233, 57.43210405432154], [23.69278549670226, 56.57874349003233], [23.056550029253323, 56.5278786755589], [23.811184166704525, 56.89568523165169], [23.890180522719273, 56.61229919208161], [23.39817860895224, 56.10095561315726], [23.545871460122914, 56.49491312815199], [23.996696658891718, 57.195249844281044], [23.072937958349254, 56.331265853666686], [23.039354178954046, 56.24582760448623], [23.8591049790993, 56.92783151262562], [23.403219598385835, 57.47787913797892], [23.622147284316263, 56.69770456939211], [23.584242964815836, 56.06948060529391], [23.703805970592608, 56.011083540672566], [23.590555622260037, 57.497011800748865], [23.432327029900268, 56.947999813316635], [23.91202352488472, 57.10770984470951], [23.44992262765528, 56.99897380624126], [23.31933422803004, 57.12156827033623], [23.536597901820716, 56.36324243004359], [23.06686650333293, 57.13546362546273], [23.251285283158758, 56.50840242536802], [23.108019442965485, 56.240955202642056], [23.40727416925084, 56.91116383635458]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_0bc658eab334ce36d8669dedeb4192d2);
+        
+</script>
+</html>
