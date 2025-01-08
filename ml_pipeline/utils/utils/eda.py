@@ -20,7 +20,7 @@ class Eda :
     def read_file():
         dir_folder= pathlib.Path.cwd().parent.parent
         input_path = dir_folder/ "data" / "data" 
-        file_name = "diabetes_missing_values.csv"
+        file_name = "diabetes.csv"
         df= pd.read_csv(os.path.join(input_path,file_name))
         return df
     
@@ -46,7 +46,7 @@ class Eda :
     def numeric_analysis(df):
         
     
-        return print(df.describe())
+        return print(df.describe().T)
     
     
     def target_variable_balance_check(self, df, target):
@@ -391,53 +391,6 @@ class Eda :
         
         return encoding_summary, df_encoded
 
-### New class 
-class OutlierReplaceWithMedian(BaseEstimator, TransformerMixin):
-    def __init__(self, cols=None, threshold=1.5):
-        """
-        Initialize the OutlierReplaceWithMedian with the columns to check for outliers
-        and the IQR threshold for detecting them.
-        
-        Parameters:
-        cols (list): List of column indices or names to check for outliers.
-        threshold (float): Multiplier for the IQR to define outliers. Typically 1.5 or 3.
-        """
-        self.cols = cols
-        self.threshold = threshold
-    
-    def fit(self, X, y=None):
-        return self  # No fitting necessary for outlier removal
-    
-    def transform(self, X):
-        if isinstance(X, pd.DataFrame):
-            data = X.copy()
-        else:
-            data = pd.DataFrame(X)
-        
-        # If cols is None, use all numeric columns
-        cols = self.cols if self.cols is not None else data.select_dtypes(include=[np.number]).columns
-        
-        for col in cols:
-            if isinstance(col, int):  # If index is passed
-                col = data.columns[col]  # Convert index to column name
-            
-            # Skip non-numeric columns
-            if not pd.api.types.is_numeric_dtype(data[col]):
-                continue
-            
-            Q1 = data[col].quantile(0.25)
-            Q3 = data[col].quantile(0.75)
-            IQR = Q3 - Q1
-            lower_bound = Q1 - self.threshold * IQR
-            upper_bound = Q3 + self.threshold * IQR
-            
-            median = data[col].median()
-            data[col] = np.where(data[col] > upper_bound, median, data[col])
-            data[col] = np.where(data[col] < lower_bound, median, data[col])
-        
-        return data.values  # Return as a NumPy array for compatibility with scikit-learn
-# Short 
-# Outliers / standrization / onehot encoding / pipeline / split / model 1 / metrics /save /hyper / evaluation /API /Fast API/ Docker / rabitmq
 
 
 # Long           
@@ -453,9 +406,9 @@ class OutlierReplaceWithMedian(BaseEstimator, TransformerMixin):
         
     
 
-use = Eda('Outcome',"mean","mode" )
-df = use.read_file().head(10)
-print(df)
+#use = Eda('Outcome',"mean","mode" )
+#df = use.read_file().head(10)
+#print(df)
 #use.data_diagnostic(df)
 #use.univariate_analysis(df)
 #use.multyvarie_analysis(df)
@@ -465,8 +418,8 @@ print(df)
 # transformed_df = pd.DataFrame(transformed_data, columns=df.columns)
 # print(transformed_df)
 # use.apply_scaling(df, base_folder="scaling_analysis", scaling_technique="standard")
-encoding_dict = {"Pregnancies": "ordinal"}
-use.apply_custom_encoding(df, encoding_dict, base_folder="encoding_analysis", ordinal_categories=None)
+#encoding_dict = {"Pregnancies": "ordinal"}
+#use.apply_custom_encoding(df, encoding_dict, base_folder="encoding_analysis", ordinal_categories=None)
 #use.target_variable_balance_check(df,'Outcome' )
 #use.multyvarie_analysis(df,'Outcome')
 # sns.catplot(x='Outcome'  , kind= 'count', data= df)
